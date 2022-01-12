@@ -9,11 +9,11 @@ const News = {
                     ${data.map((post) => `
                                 <div class="news-item border p-4">
                                     <div class="news-img">
-                                        <a href="">
-                                            <img src="https://picsum.photos/300/300" />
+                                        <a href="/news/${post.id}">
+                                            <img src="${post.img}" />
                                         </a>
                                     </div>
-                                    <h3 class="my-3"><a href="" class="font-semibold text-orange-500">${post.title}</a></h3>
+                                    <h3 class="my-3"><a href="/news/${post.id}" class="font-semibold text-orange-500">${post.title}</a></h3>
                                     <p class="text-sm text-gray-600">${post.desc}</p>
                                 </div>
                         `).join("")}

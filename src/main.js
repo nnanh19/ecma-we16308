@@ -1,4 +1,5 @@
 import Navigo from "navigo";
+import DetailNewsPage from "./pages/detailNews";
 import HomePage from "./pages/home";
 
 const router = new Navigo("/", { linksSelector: "a" });
@@ -15,6 +16,10 @@ router.on({
     },
     "/product": () => {
         print("Product Page");
+    },
+    "/news/:id": (value) => {
+        console.log(value.data.id);
+        print(DetailNewsPage.render(value.data.id));
     },
 });
 
@@ -39,3 +44,8 @@ router.resolve();
 // const banhDeo = new KhuanBanh(10, 20);
 // banhDeo.showInfo();
 // console.log(banhDeo.duong);
+
+// function sum(a, b) {
+//     return a + b;
+// }
+// sum(3, 4);
